@@ -54,6 +54,14 @@ require PUN_ROOT.'include/addons.php';
 // Load UTF-8 functions
 require PUN_ROOT.'include/utf8/utf8.php';
 
+// CodeIgniter 4
+
+ob_start();
+
+require dirname(__DIR__) . '/application/public/index.php';
+
+$buffer = ob_get_clean();
+
 // Strip out "bad" UTF-8 characters
 forum_remove_bad_characters();
 
